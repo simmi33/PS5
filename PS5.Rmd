@@ -26,10 +26,14 @@ rows <- nrow(gapminder)
 cat("\nThe amount of rows are:", rows)
 ```
 
+**There are 13,055 rows**
+
 ```{r, message=FALSE}
 columns <- ncol(gapminder)
 cat("\nThe amount of columns are:", columns)
 ```
+
+**There are 25 columns**
 
 ```{r, message=FALSE}
 tails <- tail(gapminder)
@@ -37,7 +41,28 @@ cat("\nHere are a few lines of data:\n")
 print(tails)
 ```
 
+### Descriptive statistics
 
+```{r}
+gapminder %>%
+  distinct(gapminder$name) %>%
+  count()
+```
 
+*There are 250 countries under 'name'*
 
+```{r}
+gapminder %>%
+  distinct(gapminder$iso2) %>%
+  count()
+```
 
+*There are 249 countries under 'iso2'*
+
+```{r}
+gapminder %>%
+distinct(gapminder$iso3) %>%
+  count()
+```
+
+*There are 253 countries under 'iso3'*
