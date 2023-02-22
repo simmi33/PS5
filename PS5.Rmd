@@ -1,0 +1,43 @@
+---
+title: "PS5"
+author: "Simran Bhatti"
+date: "2023-02-18"
+output: html_document
+---
+
+```{r setup, message=FALSE}
+library(tidyverse)
+
+```
+
+# Loading and checking data
+
+```{r, message=False}
+gapminder <- read.delim("C:/Users/simra/Documents/Simran Bhatti/INFO 201/ps5-simmi33/gapminder.csv.bz2")
+
+gapminder
+```
+
+### Amount of rows and columns:
+
+```{r, message=FALSE}
+
+rows <- nrow(gapminder)
+cat("\nThe amount of rows are:", rows)
+```
+
+```{r, message=FALSE}
+columns <- ncol(gapminder)
+cat("\nThe amount of columns are:", columns)
+```
+
+```{r, message=FALSE}
+tails <- tail(gapminder)
+cat("\nHere are a few lines of data:\n")
+print(tails)
+```
+
+
+
+
+
