@@ -8,10 +8,13 @@ and link to your repo on canvas.
 •This problem sets asks you to write extensively when commenting your results. Please write
 clearly! Answer questions in a way that if the code chunks are hidden then the result is still
 readable!
-– All substantial questions need explanations. You do not have to explain the simple things
+
+All substantial questions need explanations. You do not have to explain the simple things
 like “how many rows are there in data”, but if you make a plot of life expectancy, then
 you should explain what does the plot tell you.
-– Write explanations as markdown and use the styles like bold and italic as appropriate.
+
+Write explanations as markdown and use the styles like bold and italic as appropriate.
+ 
 •Do not print too much results. It is all well to print a few lines of data for evaluaton/demon-
 stration purposes. But do not print dozens (or thousands!) of lines–no one bothers to look
 at that many numbers. You will lose points for annoying others (here your graders, but later
@@ -61,7 +64,6 @@ size.
 Hint: Americas 2016 should be 4.80.
 5. (7pt) Make a barplot where you show the previous results–average CO2 emissions per capita
 across continents in 1960 and 2016.
-
 6. Which countries are the three largest, and three smallest CO2 emitters (in terms of CO2 per
 capita) in 2019 for each continent? (Assume region is continent).
 
@@ -72,7 +74,6 @@ Let’s look at GDP per capita (GDP_PC ).
 continent. Feel free to adjust the plot in other ways to make it better.
 Comment what do you see there.
 2. (4pt) Make a similar plot, but this time use 2019 data only.
-3
 3. (6pt) Compare these two plots and comment what do you see. How has world developed
 through the last 60 years?
 4. (6pt) Compute the average life expectancy for each continent in 1960 and 2019. Do the results
