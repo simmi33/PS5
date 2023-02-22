@@ -4,6 +4,7 @@ sets, this one does not give you a ready-made GH repo with a code file–it is n
 a repo and include your rmarkdown file in there.
 You should answer the questions below in that file, knit it, and submit both the compiled html
 and link to your repo on canvas.
+
 •This problem sets asks you to write extensively when commenting your results. Please write
 clearly! Answer questions in a way that if the code chunks are hidden then the result is still
 readable!
@@ -15,48 +16,25 @@ you should explain what does the plot tell you.
 stration purposes. But do not print dozens (or thousands!) of lines–no one bothers to look
 at that many numbers. You will lose points for annoying others (here your graders, but later
 potentially your boss).
+
 •Do not make code lines too long. 80-100 characters is a good choice. Your grader may not
 be able to follow all the code if the line is too long–most of us are using small laptop screens!
 (And again–you want to keep your graders happy!)
 Gapminder data
+
 We use gapminder dataset, downloaded from https://www.gapminder.org/data/, however, the
 data structure there is quire complex, please use the dataset provided on canvas (in files/data).
-The variables are:
-name country name
-iso3 3-letter country code
-iso2 2-letter country code
-region broad geographic region
-sub-region more precise region
-intermediate-region
-time year
-1
-totalPopulation total population
-GDP_PC GDP per capita (constant 2010 US$)
-accessElectricity Access to electricity (% of population)
-agriculturalLand Agricultural land (sq. km)
-agricultureTractors Agricultural machinery, tractors (count)
-cerealProduction Cereal production (metric tons)
-feritilizerHa Fertilizer consumption (kilograms per hectare of arable land)
-fertilityRate total fertility rate (births per woman)
-lifeExpectancy Life expectancy at birth, total (years)
-childMortality Mortality rate, under-5 (per 1,000 live births)
-youthFemaleLiteracy Literacy rate, youth female (% of females ages 15-24)
-youthMaleLiteracy Literacy rate, youth male (% of males ages 15-24)
-adultLiteracy Literacy rate, adult total (% of people ages 15 and above)
-co2 CO2 emissions (kt)
-greenhouseGases Total greenhouse gas emissions (kt of CO2 equivalent)
-co2_PC CO2 emissions (metric tons per capita)
-pm2.5_35 PM2.5 pollution, population exposed to levels exceeding WHO Interim Target-1 value
-36ug/m3 (
-battleDeaths Battle-related deaths (number of people)
-1 Load and check data (5pt)
+
+## 1 Load and check data (5pt)
 You first task is to do a very simple data check:
 1. (1pt) For solving the problems, and answering the questions, create a new rmarkdown docu-
 ment with an appropriate title. See https://faculty.washington.edu/otoomet/info201-book/
 r-markdown.html#r-markdown-rstudio-creating.
 2. (2pt) Load data. How many rows/columns do we have?
 3. (2pt) Print a small sample of data. Does it look OK?
-2 Descriptive statistics (15pt)
+
+
+## 2 Descriptive statistics (15pt)
 1. (3pt) How many countries are there in the dataset? Analyze all three: iso3, iso2 and name.
 2. If you did this correctly, you saw that there are more names than iso-2 codes, and there are
 even more iso3 -codes. What is going on? Can you find it out?
@@ -66,8 +44,9 @@ correspond to more than one name? What are these countries?
 more than one iso3-code? What are these countries?
 Hint: two of these entitites are CHANISL and NLD CURACAO.
 3. (2pt) What is the minimum and maximum year in these data?
-2
-3 CO2 emissions (30pt)
+
+
+## 3 CO2 emissions (30pt)
 Next, let’s analyze CO2 emissions.
 1. (2pt) How many missing co2 emissions are there for each year? Analyze both missing CO2
 and co2_PC. Which years have most missing data?
@@ -85,7 +64,8 @@ across continents in 1960 and 2016.
 
 6. Which countries are the three largest, and three smallest CO2 emitters (in terms of CO2 per
 capita) in 2019 for each continent? (Assume region is continent).
-4 GDP per capita (50pt)
+
+## 4 GDP per capita (50pt)
 Let’s look at GDP per capita (GDP_PC ).
 1. (8pt) Make a scatterplot of GDP per capita versus life expectancy by country, using data for
 1960. Make the point size dependent on the country size, and color those according to the
@@ -115,4 +95,5 @@ Hint2: 17 for 1960.
 bit. But we also have more countries in 2019–what about the relative rank divided by the
 corresponding number of countries that have LE data in the corresponding year?
 Hint: 0.0904 for 1960.
+
 Finally tell us how many hours did you spend on this PS.
