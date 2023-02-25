@@ -9,39 +9,24 @@ output: html_document
 library(tidyverse)
 
 ```
-
 # Loading and checking data
 
-```{r, message=False}
+```{r, message=FALSE}
 gapminder <- read.delim("C:/Users/simra/Documents/Simran Bhatti/INFO 201/ps5-simmi33/gapminder.csv.bz2")
 
-gapminder
 ```
 
-### Amount of rows and columns:
+The *gapminder* data has `r nrow(gapminder)` rows and `r ncol(gapminder)`
 
+
+Example of gapminder data:
 ```{r, message=FALSE}
-
-rows <- nrow(gapminder)
-cat("\nThe amount of rows are:", rows)
+gapminder %>%
+  sample_n(5) %>%
+knitr::kable()
 ```
 
-**There are 13,055 rows**
-
-```{r, message=FALSE}
-columns <- ncol(gapminder)
-cat("\nThe amount of columns are:", columns)
-```
-
-**There are 25 columns**
-
-```{r, message=FALSE}
-tails <- tail(gapminder)
-cat("\nHere are a few lines of data:\n")
-print(tails)
-```
-
-### Descriptive statistics
+# Descriptive statistics
 
 ```{r}
 gapminder %>%
@@ -66,3 +51,64 @@ distinct(gapminder$iso3) %>%
 ```
 
 *There are 253 countries under 'iso3'*
+
+```{r, message=FALSE}
+gapminder %>%
+  group_by(iso2)%>%
+summarize(nameofiso = n_distinct(name), na.rm= TRUE)
+```
+
+
+
+*There seem to be two iso2 codes that correspond*
+
+```{r}
+gapminder %>%
+  group_by(name) %>%
+  select(iso2, name) %>%
+  summarise(num = n_distinct(iso2)) %>%
+  arrange(desc(num))
+
+```
+*When serching through data, 'NA' countries seem to correspond with the iso-2 codes*
+
+```{r, message=FALSE}
+gapminder %>%
+  group_by(iso3)%>%
+  summarise(nameofiso3 = n_distinct(name), na.rm=TRUE)
+```
+*There seem to be no iso3 codes that correspond*
+
+```{r}
+gapminder %>%
+group_by(name) %>%
+  select(iso3, name) %>%
+  summarise(num =n_distinct(iso3)) %>%
+  arrange(desc(num)) 
+```
+*When searching through data, 'NA' countries seem to correspond with iso-3 codes 4 times. This means that 4 iso-3 code correlate with countries with no name in the data*
+
+
+```{r, message=FALSE}
+min(gapminder$time, na.rm = TRUE)
+max(gapminder$time, na.rm = TRUE)
+```
+The gapminder data set has a maximum of `r max(gapminder$time, na.rm = TRUE)` and a minimum of `r min(gapminder$time, na.rm = TRUE)`
+
+# CO2 Emmisions
+
+```{r}
+gapminder %>% 
+  filter(is.na(co2), is.na(co2_PC)) %>%
+  group_by(time) %>% 
+  summarise(missing_co2 = length(co2), missing_co2_pc = length(co2_PC))
+
+```
+The years 1960 and 1961 in the data have the most missing data for 'co2' and 'co2_pc' with the total of 60.
+
+
+```{r, message=FALSE}
+gapminder %>% 
+group_by(region) %>% 
+  summarise(co2_average = mean(co2_PC, na.rm = TRUE))
+```
